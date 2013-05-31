@@ -1,0 +1,10 @@
+{
+  "name": "errors_demo_from_discover_meteor",
+  "description": "A pattern to display application errors to the user",
+  "homepage": "https://github.com/tmeasday/meteor-errors",
+  "author": "Brian Bolton <brian.bolton@gmail.com>",
+  "version": "0.1.0",
+  "git": "https://github.com/tmeasday/meteor-errors.git",
+  "packages": {
+  }
+}
