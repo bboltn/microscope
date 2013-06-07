@@ -1,5 +1,5 @@
-Meteor.publish("posts", function(){
-	return Posts.find();
+Meteor.publish("posts", function(limit){
+	return Posts.find({}, {sort: {submited: -1}, limit: limit});
 });
 
 Meteor.publish("comments", function(postId) {
@@ -7,5 +7,5 @@ Meteor.publish("comments", function(postId) {
 });
 
 Meteor.publish("notifications", function() {
-	return Notifications.find();
+	return Notifications.find({userId: this.userId});
 });

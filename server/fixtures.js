@@ -40,7 +40,7 @@ if(Posts.find().count() === 0) {
 		userId: tom._id,
 		author: tom.profile.name,
 		url: "http://meteor.com",
-		submitted: now = 10 * 3600 * 1000,
+		submitted: now - 10 * 3600 * 1000,
 		commentsCount: 0
 	});
 
@@ -52,5 +52,26 @@ if(Posts.find().count() === 0) {
 		submitted: now - 12 * 3600 * 1000,
 		commentsCount: 0
 	});	
+
+	Posts.insert({
+		title: "The Meteor Book",
+		userId: tom._id,
+		author: tom.profile.name,
+		url: "http://themeteorbook.com",
+		submitted: now - 12 * 3600 * 1000,
+		commentsCount: 0
+	});
+
+	for (var i = 0; i < 10; i++)
+	{
+		Posts.insert({
+			title: "Test post #" + i,
+			author: sacha.profile.name,
+			userId: sacha._id,
+			url: "http://google.com?q=test-" + i,
+			submitted: now - i * 3600 * 1000,
+			commentsCount: 0
+		});
+	}
 }
 		
