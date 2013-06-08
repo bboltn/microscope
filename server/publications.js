@@ -1,5 +1,9 @@
-Meteor.publish("posts", function(limit){
+Meteor.publish("newPosts", function(limit){
 	return Posts.find({}, {sort: {submited: -1}, limit: limit});
+});
+
+Meteor.publish("singlePost", function(id) {
+	return id && Posts.find(id);
 });
 
 Meteor.publish("comments", function(postId) {
